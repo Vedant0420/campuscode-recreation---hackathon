@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-paper: #f7f7f4;
+  --color-card: #ffffff;
+  --color-line: #deded8;
+  --color-ink: #111111;
+  --color-muted: #64748b;
+  --color-lime: #a7f37a;
+  --color-lime-deep: #6f8e18;
+  --color-violet: #7566ff;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
