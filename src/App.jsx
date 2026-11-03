@@ -2,8 +2,9 @@ import { useState } from 'react'
 import Sidebar from './components/Sidebar'
 import Topbar from './components/Topbar'
 import PageHeading from './components/PageHeading'
-
-const user = { name: 'Vedant Khedkar', initials: 'VK', role: 'STUDENT' }
+import HeroCard from './components/overview/HeroCard'
+import StatCards from './components/overview/StatCards'
+import { user, currentEvent, stats } from './data/mock'
 
 export default function App() {
   const [active, setActive] = useState('Overview')
@@ -31,6 +32,8 @@ export default function App() {
             }
             text="Your CampusCode activity, all in one place."
           />
+          <HeroCard event={currentEvent} user={user} />
+          <StatCards stats={stats} />
         </main>
       </div>
     </div>
