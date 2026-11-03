@@ -13,6 +13,22 @@
   --color-lime: #a7f37a;
   --color-lime-deep: #6f8e18;
   --color-violet: #7566ff;
+
+  --animate-rise: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-underline: underline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.35s both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
 }
 
 body {
