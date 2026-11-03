@@ -8,18 +8,26 @@ import DiscoverEvents from './components/overview/DiscoverEvents'
 import Deadlines from './components/overview/Deadlines'
 import AiSpotlight from './components/overview/AiSpotlight'
 import Journey from './components/overview/Journey'
-import { user, currentEvent, stats, discoverEvents, deadlines } from './data/mock'
+import CurrentActivity from './components/overview/CurrentActivity'
+import NotificationsPanel from './components/overview/NotificationsPanel'
+import { user, currentEvent, stats, discoverEvents, deadlines, notifications as initialNotifications } from './data/mock'
 
 export default function App() {
   const [active, setActive] = useState('Overview')
+  const [notifications, setNotifications] = useState(initialNotifications)
   const firstName = user.name.split(' ')[0].toUpperCase()
+  const unread = notifications.filter((n) => !n.read).length
+
+  function markRead(id) {
+    setNotifications((list) => list.map((n) => (n.id === id ? { ...n, read: true } : n)))
+  }
 
   return (
     <div className="flex h-screen overflow-hidden">
       <Sidebar active={active} onSelect={setActive} user={user} />
 
       <div className="flex-1 overflow-y-auto">
-        <Topbar page={active} user={user} unread={0} />
+        <Topbar page={active} user={user} unread={unread} />
 
         <main className="mx-auto max-w-[1280px] px-12 pt-[54px] pb-[90px]">
           <PageHeading
@@ -44,6 +52,11 @@ export default function App() {
             <Deadlines items={deadlines} onBrowse={() => setActive('My Events')} />
             <AiSpotlight onOpen={setActive} />
             <Journey stats={stats} onCertificates={() => setActive('Certificates')} />
+          </div>
+
+          <div className="mt-4 grid grid-cols-2 gap-4">
+            <CurrentActivity event={currentEvent} onViewEvents={() => setActive('Events')} />
+            <NotificationsPanel items={notifications} onRead={markRead} onOpenAll={() => setActive('Notifications')} />
           </div>
         </main>
       </div>

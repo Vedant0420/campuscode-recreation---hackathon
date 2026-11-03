@@ -26,6 +26,27 @@ export const deadlines = [
   { title: 'CodeSprint Winter', date: '2026-11-12', label: 'REGISTRATION' },
 ]
 
+export const notifications = [
+  {
+    id: 1,
+    title: 'Round 1 opens on 6 Nov',
+    body: 'Submit your live link and screenshots between 10 AM and 5 PM.',
+    time: '2026-11-04',
+  },
+  {
+    id: 2,
+    title: 'Registration confirmed',
+    body: "You're registered for ReBuild '26. See you in Round 1.",
+    time: '2026-11-02',
+  },
+  {
+    id: 3,
+    title: 'New event: CodeSprint Winter',
+    body: 'Registrations are open for the next web development sprint.',
+    time: '2026-11-01',
+  },
+]
+
 export const stats = {
   registered: 3,
   ongoing: 1,
