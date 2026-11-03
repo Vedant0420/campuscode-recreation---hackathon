@@ -4,7 +4,8 @@ import Topbar from './components/Topbar'
 import PageHeading from './components/PageHeading'
 import HeroCard from './components/overview/HeroCard'
 import StatCards from './components/overview/StatCards'
-import { user, currentEvent, stats } from './data/mock'
+import DiscoverEvents from './components/overview/DiscoverEvents'
+import { user, currentEvent, stats, discoverEvents } from './data/mock'
 
 export default function App() {
   const [active, setActive] = useState('Overview')
@@ -34,6 +35,7 @@ export default function App() {
           />
           <HeroCard event={currentEvent} user={user} />
           <StatCards stats={stats} />
+          <DiscoverEvents events={discoverEvents} onViewAll={() => setActive('Events')} />
         </main>
       </div>
     </div>
