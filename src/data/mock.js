@@ -20,6 +20,12 @@ export const discoverEvents = [
   { id: 'fc-26', title: "FirstCommit '26 Quiz", track: 'Open Innovation', startDate: '2026-12-01' },
 ]
 
+export const deadlines = [
+  { title: "ReBuild '26 · Round 1", date: '2026-11-06', label: 'SUBMISSION' },
+  { title: "ReBuild '26 · Final round", date: '2026-11-07', label: 'PRESENTATION' },
+  { title: 'CodeSprint Winter', date: '2026-11-12', label: 'REGISTRATION' },
+]
+
 export const stats = {
   registered: 3,
   ongoing: 1,

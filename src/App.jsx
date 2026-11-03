@@ -5,7 +5,10 @@ import PageHeading from './components/PageHeading'
 import HeroCard from './components/overview/HeroCard'
 import StatCards from './components/overview/StatCards'
 import DiscoverEvents from './components/overview/DiscoverEvents'
-import { user, currentEvent, stats, discoverEvents } from './data/mock'
+import Deadlines from './components/overview/Deadlines'
+import AiSpotlight from './components/overview/AiSpotlight'
+import Journey from './components/overview/Journey'
+import { user, currentEvent, stats, discoverEvents, deadlines } from './data/mock'
 
 export default function App() {
   const [active, setActive] = useState('Overview')
@@ -36,6 +39,12 @@ export default function App() {
           <HeroCard event={currentEvent} user={user} />
           <StatCards stats={stats} />
           <DiscoverEvents events={discoverEvents} onViewAll={() => setActive('Events')} />
+
+          <div className="my-[22px] grid grid-cols-3 gap-[18px]">
+            <Deadlines items={deadlines} onBrowse={() => setActive('My Events')} />
+            <AiSpotlight onOpen={setActive} />
+            <Journey stats={stats} onCertificates={() => setActive('Certificates')} />
+          </div>
         </main>
       </div>
     </div>

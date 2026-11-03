@@ -1,6 +1,6 @@
 export function PanelTitle({ title, action, onAction }) {
   return (
-    <div className="mb-4 flex items-center justify-between border-b border-[#efefea] pb-4">
+    <div className="mb-4 flex items-center justify-between pb-4">
       <span className="font-mono text-[10px] tracking-[0.15em] text-[#555]">{title}</span>
       {action && (
         <button
