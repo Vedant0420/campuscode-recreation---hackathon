@@ -18,6 +18,58 @@
   --animate-underline: underline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.35s both;
   --animate-float: float 5s ease-in-out infinite;
   --animate-stamp: stamp 0.45s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+  --animate-intro: intro 0.8s both;
+  --animate-card: card 0.8s 0.1s both;
+  --animate-ride: ride 1.8s ease-in forwards;
+}
+
+@keyframes intro {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+}
+
+@keyframes card {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes ride {
+  to {
+    left: calc(100% - 90px);
+  }
+}
+
+@keyframes network {
+  to {
+    stroke-dashoffset: -250px;
+  }
+}
+
+@keyframes node {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.auth-network path {
+  fill: none;
+  stroke: #7665ff26;
+  stroke-width: 1px;
+  stroke-dasharray: 7 10;
+  animation: network 16s linear infinite;
+}
+
+.auth-network circle {
+  fill: var(--color-violet);
+  animation: node 2.5s ease-in-out infinite;
 }
 
 @keyframes stamp {
