@@ -7,20 +7,21 @@ const toggle =
 
 export function Label({ htmlFor, children }) {
   return (
-    <label htmlFor={htmlFor} className="mb-[9px] block font-mono text-[8px] tracking-[1px] text-[#777]">
+    <label htmlFor={htmlFor} className="mb-[9px] block font-mono text-[8px] leading-[10px] tracking-[1px] text-[#777]">
       {children}
     </label>
   )
 }
 
-export function Field({ id, label, icon, type = 'text', height = 54, ...inputProps }) {
+// compact is the tighter version the register form uses
+export function Field({ id, label, icon, type = 'text', compact = false, spacing, ...inputProps }) {
   const [show, setShow] = useState(false)
   const isPassword = type === 'password'
 
   return (
-    <div className="mb-[22px]">
+    <div style={{ marginBottom: spacing ?? (compact ? 16 : 22) }}>
       <Label htmlFor={id}>{label}</Label>
-      <div className={wrap} style={{ height }}>
+      <div className={wrap} style={{ height: compact ? 50 : 54 }}>
         <span className="grid w-[50px] place-items-center font-mono text-[13px] text-[#aaa]">{icon}</span>
         <input
           id={id}
@@ -29,7 +30,11 @@ export function Field({ id, label, icon, type = 'text', height = 54, ...inputPro
           {...inputProps}
         />
         {isPassword && (
-          <button type="button" onClick={() => setShow((s) => !s)} className={`${toggle} mr-2.5`}>
+          <button
+            type="button"
+            onClick={() => setShow((s) => !s)}
+            className={`${toggle} mr-2.5 ${compact ? 'border border-[#d8d8d2] bg-[#f4f4f0]' : ''}`}
+          >
             <span className="text-[9px]">{show ? '●' : '○'}</span>
             {show ? 'HIDE' : 'SHOW'}
           </button>
@@ -45,7 +50,7 @@ export function newCaptcha() {
 
 const inkColors = ['#7566ff', '#e0359a', '#22b8cf', '#8bcf19', '#e07b39']
 
-export function Captcha({ id, code, value, onChange, onRefresh, height = 54 }) {
+export function Captcha({ id, code, value, onChange, onRefresh, compact = false }) {
   // keep the same squiggle until the code changes
   const glyphs = useMemo(
     () =>
@@ -60,7 +65,7 @@ export function Captcha({ id, code, value, onChange, onRefresh, height = 54 }) {
   )
 
   return (
-    <div className="mb-[22px]">
+    <div style={{ marginBottom: compact ? 17 : 22 }}>
       <Label htmlFor={id}>CAPTCHA</Label>
       <div className="flex items-center gap-3">
         <span className="inline-flex min-h-[50px] min-w-[150px] select-none overflow-hidden rounded-lg border border-[#2a2f45] bg-[#f4f4f0]">
@@ -87,7 +92,7 @@ export function Captcha({ id, code, value, onChange, onRefresh, height = 54 }) {
           ↻ NEW
         </button>
       </div>
-      <div className={`${wrap} mt-2`} style={{ height }}>
+      <div className={`${wrap} mt-2`} style={{ height: compact ? 50 : 54 }}>
         <input
           id={id}
           value={value}

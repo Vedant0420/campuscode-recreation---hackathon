@@ -5,7 +5,7 @@ export default function AuthLayout({ status, indexLabel, indexCount, word, descr
   const navigate = useNavigate()
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-paper bg-[radial-gradient(circle_at_75%_35%,#7665ff12,transparent_25%),radial-gradient(circle_at_25%_75%,#a8e62e0f,transparent_25%)]">
+    <div className="relative min-h-screen overflow-clip bg-paper bg-[radial-gradient(circle_at_75%_35%,#7665ff12,transparent_25%),radial-gradient(circle_at_25%_75%,#a8e62e0f,transparent_25%)]">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(#1414140b_1px,transparent_1px),linear-gradient(90deg,#1414140b_1px,transparent_1px)] bg-[size:65px_65px] [mask-image:linear-gradient(#000,#00000073,transparent)]" />
       <div className="pointer-events-none absolute top-[70px] -right-[180px] h-[500px] w-[500px] rounded-full bg-[#7665ff14] blur-[90px]" />
       <div className="pointer-events-none absolute -bottom-[120px] -left-[120px] h-[350px] w-[350px] rounded-full bg-[#a8e62e12] blur-[90px]" />
@@ -73,7 +73,7 @@ export default function AuthLayout({ status, indexLabel, indexCount, word, descr
             <div className="flex items-start justify-between">
               <div>
                 <span className="font-mono text-[8px] tracking-[1px] text-[#999]">{card.label}</span>
-                <h2 className="mt-2.5 text-[39px] leading-[1.15] font-bold tracking-[-3px]">{card.title}</h2>
+                <h2 className="mt-2.5 text-[39px] leading-[1.05] font-bold tracking-[-3px]">{card.title}</h2>
                 <p className="mt-[7px] text-[10px] text-[#999]">{card.text}</p>
               </div>
               <div className="text-right font-mono text-[9px] leading-[1.6] text-[#bbb]">
