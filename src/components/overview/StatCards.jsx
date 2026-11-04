@@ -13,10 +13,10 @@ function StatCard({ label, value, detail, delay }) {
 
 export default function StatCards({ stats }) {
   const cards = [
-    { label: 'REGISTERED', value: stats.registered, detail: 'ALL TIME' },
-    { label: 'ONGOING', value: stats.ongoing, detail: 'IN PROGRESS' },
-    { label: 'COMPLETED', value: stats.completed, detail: 'SUBMITTED' },
-    { label: 'CERTIFICATES', value: stats.certificates, detail: 'EARNED' },
+    { label: 'REGISTERED', value: stats.registered, detail: 'FROM BACKEND' },
+    { label: 'ONGOING', value: stats.ongoing, detail: 'FROM BACKEND' },
+    { label: 'COMPLETED', value: stats.completed, detail: 'FROM BACKEND' },
+    { label: 'CERTIFICATES', value: stats.certificates, detail: 'FROM BACKEND' },
   ]
 
   return (

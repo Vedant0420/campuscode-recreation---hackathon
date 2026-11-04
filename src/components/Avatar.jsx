@@ -1,6 +1,6 @@
 const backgrounds = ['#1c1c1c', '#e3e0ff', '#e8f5d6', '#ffe8d6', '#d6f0ff']
 const skins = ['#ffd9b3', '#f1c27d', '#e0ac69', '#c68642']
-const shirts = ['#7566ff', '#8bcf19', '#111111', '#e07b39']
+const shirts = ['#111111', '#8bcf19', '#7566ff', '#e07b39']
 
 // simple hash so the same name always gets the same colours
 function hash(str) {

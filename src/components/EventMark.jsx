@@ -1,9 +1,18 @@
 const gradients = [
   ['#a7f37a', '#4c7a12'],
-  ['#7566ff', '#2e1a8f'],
+  ['#7c5cff', '#2e1a8f'],
   ['#141414', '#4a4a4a'],
+  ['#9ed41f', '#1d6f5f'],
+  ['#b8e62e', '#7c5cff'],
   ['#ffcf5c', '#e07b39'],
 ]
+
+// same title always gets the same gradient
+function pickGradient(title) {
+  let h = 0
+  for (const ch of title) h = (h * 31 + ch.charCodeAt(0)) >>> 0
+  return gradients[h % gradients.length]
+}
 
 function initials(title) {
   const words = title.replace(/[^a-zA-Z ]/g, '').split(' ').filter(Boolean)
@@ -12,10 +21,10 @@ function initials(title) {
 }
 
 export default function EventMark({ title, size = 54, className = '' }) {
-  const [from, to] = gradients[title.length % gradients.length]
+  const [from, to] = pickGradient(title)
   return (
     <span
-      className={`grid shrink-0 place-items-center rounded-[22%] font-black text-white shadow-[0_10px_24px_#00000024,inset_0_2px_#ffffff59] ${className}`}
+      className={`grid shrink-0 place-items-center rounded-full font-black text-white shadow-[0_10px_24px_#00000024,inset_0_2px_#ffffff59] ${className}`}
       style={{
         width: size,
         height: size,

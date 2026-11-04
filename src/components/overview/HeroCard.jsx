@@ -3,7 +3,7 @@ import EventMark from '../EventMark'
 
 export default function HeroCard({ event, user }) {
   return (
-    <div className="relative mb-4 flex min-h-[280px] animate-rise items-center justify-between overflow-hidden border border-line bg-white bg-[linear-gradient(120deg,#fff,#f2f2ed_60%,#f8f8f5)] p-[38px] shadow-[0_18px_45px_#1414140b] [animation-delay:100ms]">
+    <div className="relative mb-4 flex min-h-[280px] animate-rise items-center justify-between overflow-hidden border border-line bg-white p-[38px] shadow-[0_18px_45px_#1414140b] [animation-delay:100ms]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_45%,#a7d94b33,transparent_30%)]" />
 
       <div className="relative z-10 max-w-[650px]">

@@ -18,6 +18,7 @@ function EventCard({ event, joined, justJoined, onJoin }) {
           <span className="block font-mono text-[9px] tracking-[0.1em] text-[#777]">{event.track}</span>
           <strong className="my-2 block text-[13px] leading-tight">{event.title}</strong>
           <small className="block font-mono text-[9px] tracking-[0.1em] text-[#777]">{formatDate(event.startDate)}</small>
+          {event.note && <small className="block font-mono text-[9px] tracking-[0.1em] text-[#777]">{event.note}</small>}
         </div>
       </div>
 
@@ -33,7 +34,7 @@ function EventCard({ event, joined, justJoined, onJoin }) {
 }
 
 export default function DiscoverEvents({ events, onViewAll }) {
-  const [joined, setJoined] = useState([])
+  const [joined, setJoined] = useState(events.filter((e) => e.joined).map((e) => e.id))
   const [justJoined, setJustJoined] = useState(null)
 
   function join(id) {

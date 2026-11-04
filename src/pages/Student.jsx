@@ -44,7 +44,7 @@ export default function Student() {
                 .
               </>
             }
-            text="Your CampusCode activity, all in one place."
+            text="Your CampusCode activity is loaded directly from the backend."
           />
           <HeroCard event={currentEvent} user={user} />
           <StatCards stats={stats} />
