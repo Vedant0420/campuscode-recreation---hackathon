@@ -35,7 +35,7 @@ function SectionLabel({ children }) {
   )
 }
 
-export default function Sidebar({ active, onSelect, user }) {
+export default function Sidebar({ active, onSelect, user, onLogout }) {
   return (
     <aside className="sticky top-0 flex h-screen w-[260px] shrink-0 flex-col overflow-y-auto border-r border-line bg-paper px-[18px] pt-7 pb-5">
       <Logo />
@@ -86,7 +86,7 @@ export default function Sidebar({ active, onSelect, user }) {
             <small className="mt-0.5 block text-[11px] text-[#888]">{user.role}</small>
           </div>
         </div>
-        <button className="mt-3.5 w-full cursor-pointer rounded-lg border border-[#d8d8d1] p-2.5 text-xs font-black text-[#666] transition-colors hover:border-[#999] hover:text-ink">
+        <button onClick={onLogout} className="mt-3.5 w-full cursor-pointer rounded-lg border border-[#d8d8d1] p-2.5 text-xs font-black text-[#666] transition-colors hover:border-[#999] hover:text-ink">
           ↪ LOG OUT
         </button>
       </div>
