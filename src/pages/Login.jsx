@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AuthLayout from '../components/auth/AuthLayout'
 import { Captcha, Field, FormError, newCaptcha } from '../components/auth/Fields'
+import RideStage from '../components/auth/RideStage'
 
 const features = ['BUILD', 'COMPETE', 'SHIP']
 
@@ -67,20 +68,7 @@ export default function Login() {
 
         <FormError>{error}</FormError>
 
-        <div aria-hidden="true" className="relative mt-3 mb-1 h-16 overflow-hidden rounded-xl border border-dashed border-[#ddd] bg-[linear-gradient(90deg,#f7f7f4,#fff)]">
-          {!driving && <span className="absolute top-2 left-[92px] text-xs tracking-[0.1em] text-[#888]">Zzz</span>}
-          <span className={`absolute bottom-3 left-3 w-[74px] ${driving ? 'animate-ride' : ''}`}>
-            <span className="flex gap-[3px] rounded-lg bg-ink px-2.5 py-2">
-              <i className="h-4 w-3.5 -skew-x-[18deg] rounded-sm bg-white" />
-              <i className="h-4 w-3.5 -skew-x-[18deg] rounded-sm bg-[#7665ff]" />
-              <i className="h-4 w-3.5 -skew-x-[18deg] rounded-sm bg-[#8bcf19]" />
-            </span>
-            <span className={`absolute -bottom-1.5 left-2.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-ink ${driving ? 'animate-spin' : ''}`} />
-            <span className={`absolute right-2.5 -bottom-1.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-ink ${driving ? 'animate-spin' : ''}`} />
-          </span>
-          <span className="absolute top-2.5 right-[22px] text-[11px] font-bold tracking-[0.08em] text-[#555]">{driving ? 'GO' : 'READY'}</span>
-          <span className="absolute right-2.5 bottom-3 h-[34px] w-1 rounded-sm bg-[#82b91a]" />
-        </div>
+        <RideStage driving={driving} />
 
         <button type="submit" disabled={driving} className="mt-[5px] flex h-[58px] w-full cursor-pointer items-center justify-between bg-ink px-[18px] text-[11px] font-extrabold tracking-[0.3px] text-white transition-all hover:-translate-y-[3px] hover:bg-[#202020] hover:shadow-[0_15px_35px_#00000024] disabled:cursor-wait disabled:opacity-65">
           <span>{driving ? 'LOGGING IN' : 'LOGIN'}</span>
