@@ -9,6 +9,7 @@ import {
   Sparkles,
   Trophy,
 } from 'lucide-react'
+import Avatar from './Avatar'
 import Logo from './Logo'
 
 export const navItems = [
@@ -78,9 +79,7 @@ export default function Sidebar({ active, onSelect, user, onLogout }) {
       <div className="mt-auto border-t border-line pt-6">
         <SectionLabel>ACCOUNT</SectionLabel>
         <div className="flex items-center gap-2.5">
-          <div className="grid h-[31px] w-[31px] place-items-center rounded-full border border-[#d8d8d1] bg-white text-[11px] font-black">
-            {user.initials}
-          </div>
+          <Avatar name={user.name} size={31} className="border border-[#d8d8d1]" />
           <div>
             <strong className="block text-[13px]">{user.name}</strong>
             <small className="mt-0.5 block text-[11px] text-[#888]">{user.role}</small>
