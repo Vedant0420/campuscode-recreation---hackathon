@@ -20,6 +20,56 @@ export const discoverEvents = [
   { id: 'firstcommit', title: "FirstCommit '26 Quiz Competition", track: 'Open Innovation' },
 ]
 
+const quizDescription =
+  'The quiz features 50 questions across technology, AI, and engineering — 42 multiple-choice questions and 8 true/false questions — to be completed in 30 minutes on Sunday, 1 November 2026. It is conducted online on the CampusCode platform, and every participant gets a single attempt.'
+
+export const events = [
+  {
+    id: 'e2798ce3-a1b5-4806-9147-4d9f10c52ef1',
+    title: "ReBuild '26",
+    kind: 'hackathon',
+    status: 'OPEN',
+    banner: '/banners/rebuild26-banner-web.png',
+    description: currentEvent.description,
+    sizeLabel: 'TEAM SIZE',
+    size: 'Individual',
+    startDate: '2026-11-06',
+    joined: true,
+  },
+  {
+    id: '20864c76-4792-4b09-a2e9-ff6764bf20d6',
+    title: "FirstCommit '26 Quiz Competition 2.0",
+    kind: 'quiz',
+    status: 'COMPLETED',
+    banner: '/banners/quiz-banner-web-white.png',
+    tagline: 'QUIZ · SOLO · TIMED',
+    description: 'This is the reattempt quiz those who missed',
+    sizeLabel: 'FORMAT',
+    size: 'Solo',
+  },
+  {
+    id: '80299fc1-3e30-466f-a146-fd45c77c84be',
+    title: "FirstCommit '26 Quiz Competition",
+    kind: 'quiz',
+    status: 'COMPLETED',
+    banner: '/banners/quiz-banner-web-white.png',
+    tagline: 'QUIZ · SOLO · TIMED',
+    description: quizDescription,
+    sizeLabel: 'FORMAT',
+    size: 'Solo',
+  },
+]
+
+export const registrations = [
+  {
+    id: 'd8d7ac7b-1c73-4e19-a070-ea76973f661d',
+    title: "ReBuild '26",
+    banner: '/banners/rebuild26-banner-web.png',
+    status: 'REGISTERED',
+    team: 'Aura farmer',
+  },
+]
+
 export const deadlines = [
   { title: "ReBuild '26 · Round 1", date: '2026-11-06', label: 'RECREATE' },
   { title: "ReBuild '26 · Round 2", date: '2026-11-07', label: 'NEW UI' },

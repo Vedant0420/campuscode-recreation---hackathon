@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Bell, RefreshCw } from 'lucide-react'
 import Avatar from './Avatar'
 
-export default function Topbar({ page, user, unread }) {
+export default function Topbar({ page, user, unread, onOpenNotifications }) {
   const [spinning, setSpinning] = useState(false)
 
   function refresh() {
@@ -19,6 +19,7 @@ export default function Topbar({ page, user, unread }) {
 
       <div className="flex items-center gap-[9px]">
         <button
+          onClick={onOpenNotifications}
           aria-label="Open notifications"
           className="relative grid h-[38px] w-[38px] cursor-pointer place-items-center rounded-lg border border-line bg-white text-[#666] shadow-[0_2px_#00000006] transition-all hover:-translate-y-px hover:border-[#a7d94b] hover:bg-[#f8fcef] hover:text-ink"
         >

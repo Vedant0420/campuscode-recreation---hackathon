@@ -1,7 +1,7 @@
 import Avatar from '../Avatar'
 import EventMark from '../EventMark'
 
-export default function HeroCard({ event, user }) {
+export default function HeroCard({ event, user, onOpen }) {
   return (
     <div className="relative mb-4 flex min-h-[280px] animate-rise items-center justify-between overflow-hidden border border-line bg-white p-[38px] shadow-[0_18px_45px_#1414140b] [animation-delay:100ms]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_45%,#a7d94b33,transparent_30%)]" />
@@ -15,7 +15,7 @@ export default function HeroCard({ event, user }) {
           {event ? event.description : 'No current hackathon is assigned to your account.'}
         </p>
         {event && (
-          <button className="mt-3.5 cursor-pointer rounded-[7px] bg-[#a7d94b] px-4 py-[13px] text-xs font-black tracking-[0.12em] transition-all hover:-translate-y-[3px] hover:shadow-[0_12px_28px_#73912d2e] active:scale-[0.97]">
+          <button onClick={onOpen} className="mt-3.5 cursor-pointer rounded-[7px] bg-[#a7d94b] px-4 py-[13px] text-xs font-black tracking-[0.12em] transition-all hover:-translate-y-[3px] hover:shadow-[0_12px_28px_#73912d2e] active:scale-[0.97]">
             OPEN EVENT <b className="ml-3">↗</b>
           </button>
         )}
