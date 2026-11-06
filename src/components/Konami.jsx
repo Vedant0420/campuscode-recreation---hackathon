@@ -34,7 +34,7 @@ export default function Konami() {
   return (
     <div role="status" className="pointer-events-none fixed inset-0 z-[200] grid place-items-center">
       <span className="rotate-6 animate-stamp rounded-full bg-ink px-8 py-4 text-3xl font-black tracking-[0.08em] text-[#a8e62e] shadow-[0_8px_24px_#00000040]">
-        YOU FOUND IT.
+        noice you cracked it "(i mean the code bro)".
       </span>
     </div>
   )
