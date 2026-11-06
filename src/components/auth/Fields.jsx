@@ -48,7 +48,7 @@ export function newCaptcha() {
   return String(Math.floor(10000 + Math.random() * 90000))
 }
 
-const inkColors = ['#7566ff', '#e0359a', '#22b8cf', '#8bcf19', '#e07b39']
+const inkColors = ['#7665ff', '#e0359a', '#22b8cf', '#8bcf19', '#e07b39']
 
 export function Captcha({ id, code, value, onChange, onRefresh, compact = false }) {
   // keep the same squiggle until the code changes

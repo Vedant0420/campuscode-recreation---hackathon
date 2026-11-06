@@ -51,7 +51,7 @@ export default function AuthLayout({ status, indexLabel, indexCount, word, descr
             <br />
             THE
             <br />
-            <span className="text-transparent transition-colors [-webkit-text-stroke:1px_#777] hover:text-violet hover:[-webkit-text-stroke:1px_#7566ff]">ARENA.</span>
+            <span className="text-transparent transition-colors [-webkit-text-stroke:1px_#777] hover:text-violet hover:[-webkit-text-stroke:1px_#7665ff]">ARENA.</span>
           </h1>
           <p className="max-w-[455px] text-sm leading-[1.8] text-[#666]">{description}</p>
 
