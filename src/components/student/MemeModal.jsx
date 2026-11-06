@@ -22,13 +22,13 @@ export default function MemeModal({ onClose }) {
         </div>
 
         <h2 className="mt-3 text-5xl leading-none font-black tracking-[-0.05em]">
-          LEME HAVE IT. <span className="text-violet">LEME WIN.</span>
+          pls codecampus i need this.
         </h2>
-        <p className="mt-3 mb-5 text-sm leading-[1.75] text-[#6f6f69]">Please speed, I need this. My mom is kinda homeless.</p>
+        <p className="mt-3 mb-5 text-sm leading-[1.75] text-[#6f6f69]">im kinda homeless</p>
 
         <div className="overflow-hidden rounded-xl bg-[#0b0b0b]">
           <video
-            src="/videos/my-mom-is-kinda-homeless.mp4"
+            src="/videos/my-mom-is-kinda-homeless.mp4#t=11"
             title="iShowSpeed My Mom Is Kinda Homeless clip"
             controls
             playsInline
