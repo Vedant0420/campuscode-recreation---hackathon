@@ -21,6 +21,10 @@
   --animate-intro: intro 0.8s both;
   --animate-card: card 0.8s 0.1s both;
   --animate-ride: ride 1.8s ease-in forwards;
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-orbit: orbit 20s linear infinite;
+  --animate-scroll-line: scroll-line 2s ease-in-out infinite;
+  --animate-film-pulse: film-pulse 2s ease-in-out infinite;
 }
 
 @keyframes intro {
@@ -104,4 +108,56 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #777;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scroll-line {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(400%);
+  }
+}
+
+@keyframes film-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 #a8e62e80;
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 18px #a8e62e00;
+  }
+}
+
+.hero-network path {
+  fill: none;
+  stroke: #505aa033;
+  stroke-width: 1px;
+  stroke-dasharray: 7 10;
+  animation: network 15s linear infinite;
+}
+
+.hero-network circle {
+  fill: var(--color-violet);
+  filter: drop-shadow(0 0 7px #7665ff8c);
+  animation: node 2.5s ease-in-out infinite;
 }
