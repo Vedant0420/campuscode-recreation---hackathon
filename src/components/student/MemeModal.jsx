@@ -22,7 +22,7 @@ export default function MemeModal({ onClose }) {
         </div>
 
         <h2 className="mt-3 text-5xl leading-none font-black tracking-[-0.05em]">
-          pls codecampus i need this.
+          pls campuscode i need this.
         </h2>
         <p className="mt-3 mb-5 text-sm leading-[1.75] text-[#6f6f69]">im kinda homeless</p>
 
