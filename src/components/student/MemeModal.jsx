@@ -27,11 +27,12 @@ export default function MemeModal({ onClose }) {
         <p className="mt-3 mb-5 text-sm leading-[1.75] text-[#6f6f69]">Please speed, I need this. My mom is kinda homeless.</p>
 
         <div className="overflow-hidden rounded-xl bg-[#0b0b0b]">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/YJdCpltq-_k?autoplay=1&rel=0"
+          <video
+            src="/videos/my-mom-is-kinda-homeless.mp4"
             title="iShowSpeed My Mom Is Kinda Homeless clip"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
+            controls
+            playsInline
+            preload="metadata"
             className="block aspect-video w-full"
           />
         </div>
