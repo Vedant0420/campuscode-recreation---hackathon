@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import EventMark from '../EventMark'
 import PageHeading from '../PageHeading'
+import MemeModal from './MemeModal'
 import { formatDate } from '../../utils/date'
 
 const tabs = [
@@ -9,7 +10,7 @@ const tabs = [
   { label: 'Quizzes', kind: 'quiz' },
 ]
 
-function EventCard({ event }) {
+function EventCard({ event, onMeme }) {
   const [registered, setRegistered] = useState(false)
   const [showNote, setShowNote] = useState(false)
   const isIn = event.joined || registered
@@ -49,7 +50,7 @@ function EventCard({ event }) {
 
       <div className="mt-auto flex items-stretch gap-2">
         <button
-          onClick={() => setShowNote((s) => !s)}
+          onClick={() => (event.joined ? onMeme() : setShowNote((s) => !s))}
           className="min-w-0 flex-1 cursor-pointer rounded-[7px] border border-[#cfd0c7] bg-white px-4 py-[13px] text-xs font-black tracking-[0.12em] text-[#555] transition-colors hover:border-[#999] hover:text-ink"
         >
           VIEW DETAILS <b className="ml-3">↗</b>
@@ -72,6 +73,8 @@ function EventCard({ event }) {
 
 export default function Events({ events }) {
   const [kind, setKind] = useState('all')
+  const [meme, setMeme] = useState(false)
+  const closeMeme = useCallback(() => setMeme(false), [])
   const visible = kind === 'all' ? events : events.filter((e) => e.kind === kind)
 
   return (
@@ -101,9 +104,11 @@ export default function Events({ events }) {
 
       <div className="grid grid-cols-3 gap-3">
         {visible.map((event) => (
-          <EventCard key={event.id} event={event} />
+          <EventCard key={event.id} event={event} onMeme={() => setMeme(true)} />
         ))}
       </div>
+
+      {meme && <MemeModal onClose={closeMeme} />}
     </section>
   )
 }
