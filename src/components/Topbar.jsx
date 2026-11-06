@@ -26,7 +26,7 @@ export default function Topbar({ page, user, unread, onOpenNotifications }) {
           <Bell size={16} strokeWidth={1.8} />
           {unread > 0 ? (
             <b className="absolute -top-1 -right-1.5 grid h-[17px] min-w-[17px] place-items-center rounded-full bg-lime px-1 text-[10px] font-black shadow-[0_0_10px_#a7f37a8c]">
-              {unread > 9 ? '9+' : unread}
+              {unread}
             </b>
           ) : (
             <i className="absolute top-2 right-2 h-[5px] w-[5px] rounded-full border border-white bg-[#a7d94b]" />

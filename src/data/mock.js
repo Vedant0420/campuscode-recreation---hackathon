@@ -94,6 +94,12 @@ export const notifications = [
     body: 'Registrations are open. Join it from the events page.',
     time: '2026-11-03',
   },
+  ...Array.from({ length: 66 }, (_, i) => ({
+    id: i + 4,
+    title: 'Campus update',
+    body: 'New activity on CampusCode.',
+    time: '2026-11-02',
+  })),
 ]
 
 export const stats = {
